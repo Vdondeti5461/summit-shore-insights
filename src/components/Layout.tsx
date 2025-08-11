@@ -13,6 +13,19 @@ const navItems = [
 const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      {/* UVM global bar */}
+      <div className="bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between text-xs">
+          <a href="https://www.uvm.edu" target="_blank" rel="noreferrer" className="font-semibold tracking-wide">
+            University of Vermont
+          </a>
+          <nav className="hidden sm:flex items-center gap-4">
+            <a href="https://www.uvm.edu" target="_blank" rel="noreferrer" className="hover:underline">UVM Home</a>
+            <a href="https://www.uvm.edu/research" target="_blank" rel="noreferrer" className="hover:underline">Research</a>
+          </nav>
+        </div>
+      </div>
+
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-background/70 bg-background/80 border-b">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <Link to="/" className="font-extrabold text-xl tracking-tight">
@@ -46,20 +59,23 @@ const Layout = () => {
       </main>
 
       <footer className="border-t mt-12">
-        <div className="container mx-auto px-4 py-10 grid gap-4 md:grid-cols-2">
+        <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
           <div>
             <p className="font-semibold">UVM Summit to Shore</p>
-            <p className="text-sm text-muted-foreground mt-1">
-              A unified climate and environmental data portal.
+            <p className="text-sm text-muted-foreground mt-2">
+              A unified climate and environmental data portal at the University of Vermont.
             </p>
           </div>
-          <div className="flex md:justify-end items-center gap-2">
-            <Button variant="ghost" asChild>
-              <a href="/data">Download Data</a>
-            </Button>
-            <Button variant="default" asChild>
-              <a href="/analytics">View Analytics</a>
-            </Button>
+          <nav className="grid gap-2 text-sm">
+            <p className="font-medium text-foreground">Quick Links</p>
+            <a className="text-muted-foreground hover:text-foreground" href="/data">Data Download</a>
+            <a className="text-muted-foreground hover:text-foreground" href="/analytics">Analytics</a>
+            <a className="text-muted-foreground hover:text-foreground" href="/research">Research</a>
+          </nav>
+          <div className="md:text-right text-sm">
+            <p className="font-medium text-foreground">University of Vermont</p>
+            <p className="text-muted-foreground">Burlington, VT, USA</p>
+            <a href="https://www.uvm.edu" target="_blank" rel="noreferrer" className="text-primary hover:underline">uvm.edu</a>
           </div>
         </div>
       </footer>
